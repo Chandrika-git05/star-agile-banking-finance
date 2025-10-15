@@ -1,6 +1,6 @@
 resource "aws_instance" "test-server" {
   ami = "ami-0360c520857e3138f"
-  instance_type = "t3.micro"
+  instance_type = "m7i-flex.large"
   key_name = "chandrikakey"
   vpc_security_group_ids = ["sg-09798ca58648af77e"]
   connection {
