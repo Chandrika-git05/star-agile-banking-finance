@@ -22,3 +22,5 @@ pipeline {
                sh 'docker build -t chandrika5592/financeme:1.0.'
                     }
                 }
+}
+}
