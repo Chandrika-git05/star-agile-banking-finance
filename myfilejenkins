@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M2" and add it to the path.
+        maven "M2_HOME"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/Chandrika-git05/star-agile-banking-finance.git/'
+
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            }        
+        }
+       stage('Create Docker Image') {
+           steps {
+               sh 'docker build -t chandrika5592/financeme:1.0.'
+                    }
+                }
